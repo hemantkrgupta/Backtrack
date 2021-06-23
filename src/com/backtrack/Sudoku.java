@@ -1,6 +1,7 @@
 /**
  * Author - Hemant Kumar
  */
+
 package com.backtrack;
 
 import java.util.Scanner;
@@ -12,13 +13,16 @@ public class Sudoku {
    * @param args 
    */
 	public static void main(String... args){
-//		int[][] sudoku = readInput();
-		int[][] sudoku = getSudoku();
+		int[][] sudoku = readInput();
+//		int[][] sudoku = getSudoku();
 		System.out.println("Initial\n");
 		printSudoku(sudoku);
-		solveSudoku(sudoku);
-		System.out.println("\nFinal\n");
-		printSudoku(sudoku);
+		if(!solveSudoku(sudoku)) {
+		  System.out.println("Solution doesn't exist");
+		} else {
+		  System.out.println("\nFinal\n");
+		  printSudoku(sudoku);
+		}
 	}
 	
 	/**
